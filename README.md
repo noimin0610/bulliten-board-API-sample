@@ -6,6 +6,13 @@ $ gcloud functions deploy Messages --runtime go113 --trigger-http --allow-unauth
 
 ## ローカルでのテスト
 
+### 関数のテスト
+```bash
+$ go test messages_test.go messages.go
+```
+
+### API のテスト
+
 ```bash
 $ curl -X GET https://(project name).cloudfunctions.net/Messages
 Hello, World!
