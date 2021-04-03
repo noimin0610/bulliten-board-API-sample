@@ -89,7 +89,7 @@ func AllMessages() ([]Message, error) {
 	}
 	defer rows.Close()
 
-	var messages []Message
+	messages := make([]Message, 0)
 	for rows.Next() {
 		var m Message
 		if err := rows.Scan(&m.Name, &m.Text, &m.Timestamp); err != nil {
